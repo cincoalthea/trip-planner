@@ -19,7 +19,7 @@ documented below — nothing here pretends to be more "real" than it is.
 | **Weather forecast** | Mock data, deterministic per city | Real code path exists for [OpenWeatherMap](https://openweathermap.org/) — add `OPENWEATHER_API_KEY` to switch it on. |
 | **Calendar export (.ics)** | **Fully real** | No API needed — this is a hand-built, valid iCalendar file, which is a real, standard integration in its own right. Works with Google Calendar, Apple Calendar, and Outlook. |
 | **PDF export** | **Fully real** | Client-side generation via `jspdf`. |
-| **Email itinerary** | Simulated | A real send needs a verified sending domain (e.g. with [Resend](https://resend.com/)), which is real setup overhead outside a demo's scope — same honest pattern as the simulated payment flow in the canteen-ordering project. |
+| **Email itinerary** | Simulated | A real send needs a verified sending domain (e.g. with [Resend](https://resend.com/)), which is real setup overhead outside a demo's scope. |
 | **Expense splitting** | **Fully real** | Pure logic — a minimum-transaction debt-settlement algorithm (`lib/debts.js`), not a naive pairwise IOU list. |
 
 Every API route in `app/api/` checks for its real key first and only falls
