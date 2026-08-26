@@ -19,9 +19,6 @@ export async function GET(request) {
   return NextResponse.json({ source: "mock", city, forecast: getMockForecast(city, days) });
 }
 
-// Real integration: OpenWeatherMap's 5-day/3-hour forecast endpoint, summarized
-// down to one entry per day. Verify against https://openweathermap.org/forecast5
-// if the response shape changes.
 async function fetchLiveForecast(city, days, apiKey) {
   const data = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`

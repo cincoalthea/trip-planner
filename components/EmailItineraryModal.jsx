@@ -2,12 +2,8 @@
 
 import { useState } from "react";
 
-// Simulates sending the itinerary via Resend. A real send needs a verified
-// sending domain and an API key, which is real setup overhead outside the
-// scope of a demo — so this is a timed simulation, the same honest pattern
-// used for the payment flow in the canteen-ordering project.
 export default function EmailItineraryModal({ tripName, onClose }) {
-  const [stage, setStage] = useState("compose"); // compose -> sending -> sent
+  const [stage, setStage] = useState("compose");
   const [email, setEmail] = useState("");
 
   function send() {

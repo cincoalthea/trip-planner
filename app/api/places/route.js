@@ -23,9 +23,6 @@ export async function GET(request) {
   return NextResponse.json({ source: "mock", results: filterByQuery(results, query) });
 }
 
-// Real integration: Geoapify. First geocodes the city name to coordinates,
-// then searches for tourism/dining places nearby. Verify the exact request
-// shape against https://apidocs.geoapify.com/docs/places/ if it changes.
 async function fetchLivePlaces(city, apiKey) {
   const geo = await fetch(
     `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(city)}&apiKey=${apiKey}`

@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 
-// This route needs no mock fallback and no API key: Frankfurter is a genuinely
-// free, keyless exchange-rate API (built on European Central Bank reference
-// rates). It's the one integration in this project that's fully live by default.
+// Frankfurter is free and keyless, so unlike the weather/places routes this one has no mock fallback.
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const from = (searchParams.get("from") || "USD").toUpperCase();
